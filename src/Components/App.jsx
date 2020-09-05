@@ -1,13 +1,14 @@
 import React from 'react';
+import Home from "./Static/Home"
+import SignIn from "./Login/Login"
 
 function App() {
-
-
-
-  
   return (
     <div className="App">
-      <h1></h1>
+      {/* <SignIn /> */}
+      {/* <Navbar /> */}
+      {/* <About/> */}
+      <Home/>
     </div>
   );
 }
