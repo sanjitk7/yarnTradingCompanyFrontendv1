@@ -1,8 +1,7 @@
 import React from 'react';
 import Home from "./Static/Home"
 import SignIn from "./Login/Login"
-import Navbar from "./Navbar"
-import {BrowserRouter as Router,Switch, Link, Route,Redirect} from "react-router-dom"
+import {BrowserRouter as Router,Switch, Route} from "react-router-dom"
 
 function App() {
   return (
@@ -11,6 +10,9 @@ function App() {
       <Switch>
         <Route exact path="/login">
           <SignIn/>
+        </Route>
+        <Route path="/home">
+          <Home/>
         </Route>
       </Switch>
     </Router>

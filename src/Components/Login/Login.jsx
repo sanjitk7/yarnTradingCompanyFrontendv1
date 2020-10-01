@@ -4,6 +4,8 @@ import Copyright from "./Copyright";
 import useStyles from "./formStyle";
 import axios from "axios"
 import qs from "qs"
+import {Redirect} from "react-router-dom"
+import Cookies from "js-cookie"
 
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -17,10 +19,10 @@ import Box from "@material-ui/core/Box";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import Cookies from "js-cookie"
+
 // import "../style.css"
 
-export default function SignIn() {
+export default function SignIn(props) {
   const classes = useStyles();
   // console.log(classes)
 
@@ -30,6 +32,10 @@ export default function SignIn() {
     email:"",
     password:""
   })
+
+  function handleRedirect(){
+    props.history.push("/home")
+  }
 
   function handleFormInputChange(event){
     // console.log(formState)
@@ -66,9 +72,16 @@ export default function SignIn() {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
       }
-    }).then(data=>{
-      console.log(data)
-    }).catch(err=>console.log(err))
+    }).then(res=>{
+      console.log(res.data.token)
+      setAuthenticated(true)
+      Cookies.set("name", res.data.userFound.name)
+      Cookies.set("auth", res.data.token)
+      handleRedirect()
+    }).catch(err=>{
+      console.log(err)
+      setAuthenticated(false)
+    })
 
   }
 }
@@ -142,6 +155,8 @@ export default function SignIn() {
         </Box>
       </Container>
     </div>
+    
+    {authenticated && <Redirect to="/home"></Redirect>}
     </div>
   );
 }
