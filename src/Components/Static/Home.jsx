@@ -6,7 +6,7 @@ import CarouselSlider from "./Carosel"
 function Home() {
   return (
     <div className="Home">
-      {/* <Navbar/> */}
+      <Navbar/>
       <CarouselSlider/>
 
     </div>
