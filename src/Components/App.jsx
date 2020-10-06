@@ -11,7 +11,7 @@ function App() {
         <Route exact path="/login">
           <SignIn/>
         </Route>
-        <Route path="/home">
+        <Route path="/employee-home">
           <Home/>
         </Route>
       </Switch>
