@@ -5,7 +5,7 @@ import {
   HorizontalGridLines,
   YAxis,
   XAxis,
-  LineSeries,
+  VerticalBarSeries,
 } from "react-vis";
 import axios from 'axios';
 
@@ -16,7 +16,7 @@ function Inq() {
 
 
 React.useEffect(()=>{
-  axios.get("http://localhost:4000/visualisations/product-to-inquiry-count")
+  axios.get("http://localhost:4000/visualisations/state-to-inquiries")
   .then((response)=>{
     console.log("res data",response.data)
     setData(response.data)
@@ -28,15 +28,14 @@ React.useEffect(()=>{
 },[])
 
   console.log("hello", data)
-  
-  return (<div className="Inq">
-    <XYPlot height={400} width={500} xType="ordinal">
+  return (<div className="State">
+    <XYPlot height={300} width={1200} color="#ff8000" xType="ordinal">
       <VerticalGridLines />
       <HorizontalGridLines />
       <XAxis />
       <YAxis />
       {console.log("dataPdtInq:",data)}
-      {!loading && <LineSeries color="#0080ff" data={data} />}
+      {!loading && <VerticalBarSeries data={data} />}
     </XYPlot>
     </div>
   );
