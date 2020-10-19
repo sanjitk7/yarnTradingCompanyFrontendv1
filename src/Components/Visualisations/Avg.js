@@ -5,7 +5,7 @@ import {
   HorizontalGridLines,
   YAxis,
   XAxis,
-  VerticalBarSeries,
+  HorizontalBarSeries,
 } from "react-vis";
 import axios from 'axios';
 
@@ -31,12 +31,26 @@ React.useEffect(()=>{
 },[])
 
   return (<div className="Avg">
-    <XYPlot height={300} width={1200} color="#285104" xType="ordinal">
+  <div>Average Purchase Size vs Product</div>
+    <XYPlot height={300} width={1200} color="#285104" yType="ordinal">
       <VerticalGridLines />
       <HorizontalGridLines />
-      <XAxis />
-      <YAxis />
-      {!loading && <VerticalBarSeries data={data} />}
+      <XAxis title="Purchase Size (in Bags i.e 150 Kgs)" style={{
+      line: {stroke: '#000000'},
+      ticks: {stroke: '#ADDDE1'},
+      text: {stroke: 'none', fill: '#6b6b76', fontWeight: 1000}
+}}/>
+      <YAxis style={{
+      line: {stroke: '#000000'},
+      ticks: {stroke: '#ADDDE1'},
+      text: {stroke: 'none', fill: '#6b6b76', fontWeight: 1000}
+}}/>
+      <YAxis orientation="right" title="Product Specific Code" style={{
+      line: {stroke: '#ADDDE1'},
+      ticks: {stroke: '#ADDDE1'},
+      text: {stroke: 'none', fill: '#6b6b76', fontWeight: 1000}
+}}/>
+      {!loading && <HorizontalBarSeries barWidth={0.5} data={data} />}
     </XYPlot>
     </div>
   );

@@ -24,13 +24,20 @@ Product Codes against Number of Inquiries
 
 Inquiries and Regions
 
-![vis-2](public/img/vis-2.png)
+![vis-21](public/img/vis-2.png)
+
+![vis-22](public/img/pie.png)
 
 Products Average Purchase Size
 
 ![vis-3](public/img/vis-3.png)
 
+Yarn Count and Inquiry
+
+![vis-4](public/img/vis-4.png)
+
 ### Deployment
 
 Find the relaxant backend repository [here](https://github.com/sanjitk7/yarnTradingCompanyBackendv1)
 Backend is hosted in a Heroku Server - https://sanjit-yarn-trading-backend.herokuapp.com
+
