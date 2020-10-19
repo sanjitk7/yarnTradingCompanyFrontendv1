@@ -16,11 +16,19 @@ Employee Login Page -> localhost:3000/login (Authentication Done)
 
 ![flow](./public/img/yarn-frontend-1.png)
 
-## Sample Visualizations
+## Visualizations
 
 Product Codes against Number of Inquiries
 
 ![vis-1](public/img/vis1.png)
+
+Inquiries and Regions
+
+![vis-2](public/img/vis-2.png)
+
+Products Average Purchase Size
+
+![vis-3](public/img/vis-3.png)
 
 ### Deployment
 
