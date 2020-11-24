@@ -1,3 +1,5 @@
+****Please note that this is an outdated repository. Please consider checking out the newer repository is available [here](https://github.com/sanjitk7/yarnTradingCompanyFrontendv2)\****
+
 ## Frontend For a Yarn Trading Company Web App
 
 An Inventory Management and Business Intelligence Web Application for a typical Small scale trading company in the textile industry.
@@ -39,5 +41,5 @@ Yarn Count and Inquiry
 ### Deployment
 
 Find the relaxant backend repository [here](https://github.com/sanjitk7/yarnTradingCompanyBackendv1)
-Backend is hosted in a Heroku Server - https://sanjit-yarn-trading-backend.herokuapp.com
+
 
